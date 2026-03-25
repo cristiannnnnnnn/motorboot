@@ -100,8 +100,8 @@ Now flash the code on both ESPs and read the serial output
 
 ## Boat Electronics
 
-
-Servo - GPIO 13
+Servo 
+- GPIO 13
 
 Motor1
 - ENA - GPIO 14
@@ -109,33 +109,33 @@ Motor1
 - IN2 - GPIO 26
 
 Motor2
-ENB - GPIO 25
-IN3 - GPIO 33
-IN4 - GPIO 32
+- ENB - GPIO 25
+- IN3 - GPIO 33
+- IN4 - GPIO 32
 
 ## Controller Electronics
 
 Left Joystick (Throttle)
-VRy - GPIO35
-SW - GPIO17
-GND - GND
-5V+ - 3.3V
+- VRy - GPIO35
+- SW - GPIO17
+- GND - GND
+- 5V+ - 3.3V
 
 Left Joystick (Turn)
-VRx - GPIO34
-SW - GPIO16
-GND - GND
-5V+ - 3.3V
+- VRx - GPIO34
+- SW - GPIO16
+- GND - GND
+- 5V+ - 3.3V
 
 Display
-GND - GND
-VCC - VIN
-SCL / SCK - GPIO14
-SDA -  GPIO13
-RES / RESET - GPIO33
-DC / A0 - GPIO32
-CS - GPIO15
-BLK / LED - 3.3V
+- GND - GND
+- VCC - VIN
+- SCL / SCK - GPIO14
+- SDA -  GPIO13
+- RES / RESET - GPIO33
+- DC / A0 - GPIO32
+- CS - GPIO15
+- BLK / LED - 3.3V
 
 #TODO
 
@@ -153,3 +153,10 @@ Some remarks
 
 ## Controls
 
+The left Joystick is used as the Throttle Stick by moving it up and down
+
+The right Joystick is used for Turning by moving it left and right
+
+By holding the Throttle Stick you go into #TODO calibration, you can cancel it by holding the Turn Stick
+
+By holding the Turn Stick you go into #TODO calibration, you can cancel it by holding the Throttle Stick
