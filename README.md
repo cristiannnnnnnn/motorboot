@@ -124,7 +124,7 @@ Left Joystick (Throttle)
 - GND - GND
 - 5V+ - 3.3V
 
-Left Joystick (Turn)
+Right Joystick (Turn)
 - VRx - GPIO34
 - SW - GPIO16
 - GND - GND
