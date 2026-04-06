@@ -63,22 +63,47 @@ IF YOU KNOW HOW ARDUINO WORKS AND HOW TO FLASH CODE, YOU CAN SKIP THIS.
 
 We will build and test the controller and the boat separately.
 
-General Security Stuff
+## General Security Stuff
+even if its obvious
 
-- Before powering on the boat, make sure the motors are always stabilized.
-- If you are unsure what to do, always unplug the controller. The boat is programmed so that if it does not receive new packets for 4 seconds, the motors stop.
+- Electronics can behave unpredictably. Never assume a motor is inactive when the battery is plugged in. Make sure the motors are stabilized. This is especially important after flashing the firmware with the correct MAC adress.
+- Never touch open or uninsulated cables (e.g. the battery switch).
+- Always verify the battery charge level before operating the boat. Do not begin a session without confirming sufficient power.
 
-Quick Rundown of What We Will Do
 
+## Quick Rundown
+One Person will build the Controller (Person A), the other one the Boat (Person B).
+
+
+### MAC Adresses
+Both Parallel
 - Get MAC addresses of both ESPs (maybe label them).
 - Put the MAC address of the other ESP into the code.
-- Flash to test the network protocol.
-- Assemble ONLY the electronics of the boat and controller.
-- Tape, or otherwise secure, the motors to the table and test functionality.
+
+### Electronic assembly
+Person A
+- Assemble electronics of controller
+- Test the controls (keep in mind to have the boat off battery)
+
+Person B
+- Assemble electronics of boat
+
+Together
+- Tape, or otherwise secure, the motors to the table and test functionality (after controller is tested)
   - throttle and turn
-  - calibrate controller and boat
-- (If you want to reset calibration, just reflash and, under Tools, erase flash memory.)
-- Assemble the electronics into their respective hull, shell, case, whatever.
+  - if necessary calibrate 
+
+### Hull and Shell
+
+Person A
+- Assemble the electronics in the hull of the controller
+- Build Rudder mount
+
+Person B
+- tape motors insdie of the boat
+- press fit the propellers onto the shaft
+- mount shaft onto motor
+- put the other electronics into the boat
 
 ## MAC Address Configuration
 
@@ -95,7 +120,26 @@ Do that for both ESPs.
 
 Now flash the code on both ESPs and read the serial output.
 
+## Electronics
+
+#TODO explain cable connectors should be used properly
+
+#TODO You will get the power diagramm and the data diagram
+
+
 ## Boat Electronics
+
+There is a 12V and 5V zone
+For the 12V zone use the thick wires
+For the 5V zone normal wires, like jumper wires are fine
+
+Power
+![Pinout](readme/boatpower.png)
+
+Data
+![Pinout](readme/boatdata.png)
+
+If you dont like pinouts, here are the pin specifications
 
 Servo
 - GPIO 13
@@ -110,13 +154,16 @@ Motor2
 - IN3 - GPIO 33
 - IN4 - GPIO 32
 
-The sketch only shows the "power pins", the remaining pins can be connected as specified above.
-
-I would have created these sketches digitally in Fritzing, but it did not include all my parts, so this is what you'll have to live with.
-
-![Pinout](readme/boat.png)
 
 ## Controller Electronics
+
+Power
+![Pinout](readme/controllerpower.png)
+
+Data
+![Pinout](readme/controllerdata.png)
+
+If you dont like pinouts, here are the pin specifications
 
 Left Joystick (Throttle)
 - VRy - GPIO35
@@ -140,11 +187,6 @@ Display
 - CS - GPIO15
 - BLK / LED - 3.3V
 
-The sketch only shows the "power pins", the remaining pins can be connected as specified above.
-
-I would have created these sketches digitally in Fritzing, but it did not include all my parts, so this is what you'll have to live with.
-
-![Pinout](readme/controller.png)
 
 ## Testing Electronics
 
@@ -167,3 +209,7 @@ The right joystick is used for turning by moving it left and right.
 By holding the throttle stick, you enter boat calibration. You can cancel it by holding the turn stick.
 
 By holding the turn stick, you enter controller calibration. You can cancel it by holding the throttle stick.
+
+## Assembling the Boat
+
+1. The Servo mount and the rudder mount will hold eachother. Put the heat inserts into the servo mount, so the rudder mount can be screwed into it from the outside. use the given srews
