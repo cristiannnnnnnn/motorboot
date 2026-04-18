@@ -61,45 +61,57 @@ IF YOU KNOW HOW ARDUINO WORKS AND HOW TO FLASH CODE, YOU CAN SKIP THIS.
 
 # THE BOAT
 
-We will build and test the controller and the boat separately.
+Boat Components
+![cable connector](readme/boatcomponents.JPG)
+
+Controller Components
+![cable connector](readme/controllercomponents.JPG)
 
 ## General Security Stuff
+
 even if its obvious
 
 - Electronics can behave unpredictably. Never assume a motor is inactive when the battery is plugged in. Make sure the motors are stabilized. This is especially important after flashing the firmware with the correct MAC adress.
 - Never touch open or uninsulated cables (e.g. the battery switch).
 - Always verify the battery charge level before operating the boat. Do not begin a session without confirming sufficient power.
 
-
 ## Quick Rundown
+
 One Person will build the Controller (Person A), the other one the Boat (Person B).
 
-
 ### MAC Adresses
+
 Both Parallel
+
 - Get MAC addresses of both ESPs (maybe label them).
 - Put the MAC address of the other ESP into the code.
 
 ### Electronic assembly
+
 Person A
+
 - Assemble electronics of controller
 - Test the controls (keep in mind to have the boat off battery)
 
 Person B
+
 - Assemble electronics of boat
 
 Together
+
 - Tape, or otherwise secure, the motors to the table and test functionality (after controller is tested)
   - throttle and turn
-  - if necessary calibrate 
+  - if necessary calibrate
 
 ### Hull and Shell
 
 Person A
+
 - Assemble the electronics in the hull of the controller
 - Build Rudder mount
 
 Person B
+
 - tape motors insdie of the boat
 - press fit the propellers onto the shaft
 - mount shaft onto motor
@@ -120,12 +132,12 @@ Do that for both ESPs.
 
 Now flash the code on both ESPs and read the serial output.
 
-## Electronics
+## Electronics, some comments
 
-#TODO explain cable connectors should be used properly
+![cable connector](readme/cableconnectors.png)
+For connecting the cables we will mostly be using these cable connectors. Notice that they have a circular opening but after that there is a smaller square opening, where the cables actually connect. If electronics dont light up or seem to power on, the problem is most likely that you missed the square opening or the exposed cable is too short.
 
-#TODO You will get the power diagramm and the data diagram
-
+In the following you will get what i call a data and a power diagram. These are just too avoid too many cables in one image
 
 ## Boat Electronics
 
@@ -136,24 +148,28 @@ For the 5V zone normal wires, like jumper wires are fine
 Power
 ![Pinout](readme/boatpower.png)
 
+some clarification![Pinout](readme/ubec.png)
+
 Data
 ![Pinout](readme/boatdata.png)
 
 If you dont like pinouts, here are the pin specifications
 
 Servo
+
 - GPIO 13
 
 Motor1
+
 - ENA - GPIO 14
 - IN1 - GPIO 27
 - IN2 - GPIO 26
 
 Motor2
+
 - ENB - GPIO 25
 - IN3 - GPIO 33
 - IN4 - GPIO 32
-
 
 ## Controller Electronics
 
@@ -166,18 +182,21 @@ Data
 If you dont like pinouts, here are the pin specifications
 
 Left Joystick (Throttle)
+
 - VRy - GPIO35
 - SW - GPIO17
 - GND - GND
 - 5V+ - 3.3V
 
 Right Joystick (Turn)
+
 - VRx - GPIO34
 - SW - GPIO16
 - GND - GND
 - 5V+ - 3.3V
 
 Display
+
 - GND - GND
 - VCC - VIN
 - SCL / SCK - GPIO14
@@ -186,7 +205,6 @@ Display
 - DC / A0 - GPIO32
 - CS - GPIO15
 - BLK / LED - 3.3V
-
 
 ## Testing Electronics
 
@@ -206,10 +224,102 @@ The left joystick is used as the throttle stick by moving it up and down.
 
 The right joystick is used for turning by moving it left and right.
 
-By holding the throttle stick, you enter boat calibration. You can cancel it by holding the turn stick.
-
 By holding the turn stick, you enter controller calibration. You can cancel it by holding the throttle stick.
+
+(experimental, just dont do it its not fully tested) By holding the throttle stick, you enter boat calibration. You can cancel it by holding the turn stick.
+
+## Assembling the Controller
+
+### Step 1
+
+Controller Components
+![cable connector](readme/controllercomponents.JPG)
+
+### Step 2
+
+Compress and screw
+![cable connector](readme/controllercompressed.JPG)
+
+### Step 3
+
+Profit
+![cable connector](readme/controllerfinish.JPG)
+
+(+) tape it together, press-fit sometimes doesnt really do te press-fitting
 
 ## Assembling the Boat
 
-1. The Servo mount and the rudder mount will hold eachother. Put the heat inserts into the servo mount, so the rudder mount can be screwed into it from the outside. use the given srews
+Boat Components
+![cable connector](readme/boatcomponents.JPG)
+
+The Boat is a bit more complicated, it involves
+
+- Assembling the whole Rudder part
+- Put the boat hull together
+- Assemble the Motors and grease the shafts
+- lot of tape
+
+### some disclaimer
+
+This process is not perfectly parallelizable, as you will definetly collide at some point.3
+
+### Hull
+Glue/Tape Hull together
+![cable connector](readme/hullstep1.JPG)
+Care that the middle part actually has a correct direction, the wider part should go into the back part of the hull. you can see it well if you look at it from the front (or back respectively)
+
+### Rudder
+
+#### Step 1
+
+Shaft position
+![cable connector](readme/rudderstep1.JPG)
+DONT SCREW ALREADY, this is only for you to see that the flat side of the steel shaft should look toward the hole for the screw, so we have more surface area to hold on to
+
+#### Step 2
+
+Add Rudder Mount and Screw the rudder horn to the shaft, use an M3 Screw #TODO
+![cable connector](readme/rudderstep2.JPG)
+
+#### Step 3
+
+Mount servo in into the servo mount (grass is green type of instruction). Use the screws from the rudder thingy bag
+![cable connector](readme/rudderstep3.JPG)
+![cable connector](readme/rudderstep31.JPG)
+
+#### Step 4
+
+Mount servo mount and rudder mount together (yes i am having fun typing this). Use M3 Screw #TODO
+![cable connector](readme/rudderstep4.JPG)
+![cable connector](readme/rudderstep41.JPG)
+
+### Motor
+
+#### Step 1
+Screw the golden thingy to the motor with the little black screws. make sure that the golden thingy is close enough to the motor, so the whole surface area of the screw is actually holding onto the motor shaft and is tight, but it doesnt have to be too close to the motor. in germany we say "So viel wie nötig, so wenig wie möglich" 
+![cable connector](readme/motorstep1.JPG)
+![cable connector](readme/motorstep11.JPG)
+
+#### Step 2
+Shaft Tubes
+![cable connector](readme/motorstep2.JPG)
+![cable connector](readme/motorstep21.JPG)
+
+#### Step 3
+![cable connector](readme/motorstep3.JPG)
+
+Before putting the shaft into the tube we will grease it thoroughly with this Bootsfett. its not about having a thick layer or a lot in some parts but more about having at least a thin layer everywhere. we want to avoid water having a path into the boat through the shaft tube. so make sure distribute the grease in the shaft by turning and moving it back and forth until there is a thin layer everywhere
+![cable connector](readme/motorstep31.png)
+Also add these yellow things and push them all way to the rudder tube. trust it will hold the water back.
+![cable connector](readme/motorstep32.JPG)
+![cable connector](readme/yellowthing.png)
+
+#### Step 4
+Fit all other components. beauty is optional.
+![cable connector](readme/peakengineering.jpg)
+
+### Finalization
+
+- put the heavy stuff towards the back, especially the battery
+- tape everything in place, the motors to the motor holder things, battery, everything. just be careful to not tape the parts on the spots where they get hot
+- superglue the shaft TUBES to the boat on the back of the boat. THE TUBES, NOT THE SHAFTS THEMSELVES
