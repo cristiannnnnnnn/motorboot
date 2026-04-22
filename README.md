@@ -305,6 +305,12 @@ Mount servo mount and rudder mount together (yes i am having fun typing this). U
 ![cable connector](readme/rudderstep4.JPG)
 ![cable connector](readme/rudderstep41.JPG)
 
+##### Step 5
+Drill a hole and cut and bend a steel rod to connect rudder and servo like this. Yes it's kinda hard.
+![cable connector](readme/rudderstep5.jpg)
+![cable connector](readme/rudderstep51.jpg)
+![cable connector](readme/rudderstep52.jpg)
+
 #### Motor
 
 ##### Step 1
@@ -334,7 +340,7 @@ Also add these yellow things and push them all way to the rudder tube. trust it 
 
 ##### Step 4
 
-Fit all other components. beauty is optional.
+Fit all other components.y
 ![cable connector](readme/peakengineering.jpg)
 
 #### Finalization
