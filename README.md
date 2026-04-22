@@ -340,7 +340,7 @@ Also add these yellow things and push them all way to the rudder tube. trust it 
 
 ##### Step 4
 
-Fit all other components.y
+Fit all other components. beauty is optional.
 ![cable connector](readme/peakengineering.jpg)
 
 #### Finalization
